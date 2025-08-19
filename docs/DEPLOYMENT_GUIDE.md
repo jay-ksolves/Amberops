@@ -30,9 +30,9 @@ Before any deployment, you must set the following environment variables in your 
 
 ---
 
-## 3. Deployment to Vercel
+## 3. Deployment to Vercel (Frontend Apps)
 
-Vercel is an excellent platform for deploying the Next.js frontend applications. The backend Node.js services can also be deployed as Vercel Serverless Functions.
+Vercel is an excellent platform for deploying the Next.js frontend applications (`home`, `web`, `admin`).
 
 ### Step 1: Import Your Git Repository
 
@@ -40,44 +40,48 @@ In your Vercel dashboard, create a new project and import your forked Git reposi
 
 ### Step 2: Configure Each Application
 
-You will need to create a separate Vercel project for **each application** (`home`, `web`, `admin`, `auth`, `backend`).
+You will need to create a separate Vercel project for **each frontend application** (`home`, `web`, `admin`).
 
 For each Vercel project, configure the following settings:
 
 - **Root Directory**: Select the directory for the specific application (e.g., `apps/web`).
 - **Build Command**: `pnpm build`
-- **Output Directory**: `.next` for frontend apps, `dist` for backend services.
+- **Output Directory**: `.next`
 - **Install Command**: `pnpm install`
-
-The provided `vercel.json` at the project root is configured to assist with this, but manual setup in the Vercel UI is often clearer.
 
 ### Step 3: Set Environment Variables
 
-In the settings for each Vercel project, add all the required environment variables from the list above. Ensure the URLs point to your live Vercel deployment URLs.
+In the settings for each Vercel project, add all the required environment variables from the list above. Ensure the URLs point to your live Vercel deployment URLs and your backend service URLs (from Render, see below).
 
 ---
 
-## 4. Deployment to Netlify
+## 4. Deployment to Render (Backend Services)
 
-Netlify can also host the frontend applications and backend services.
+Render is a great choice for deploying the Node.js backend services (`auth` and `backend`).
 
-### Step 1: Import Repository
+### Step 1: Create New Web Services
 
-In your Netlify dashboard, import your Git repository.
+In your Render dashboard, you will create a new **Web Service** for each of the two backend applications.
 
-### Step 2: Configure Build Settings
+### Step 2: Configure Each Service
 
-For each application you deploy, configure the build settings in the Netlify UI:
+You will need to repeat this configuration process for both the `auth` service and the `backend` service.
 
-- **Base directory**: `apps/web` (or `apps/home`, etc.)
-- **Build command**: `pnpm build`
-- **Publish directory**: `apps/web/.next`
+- **Connect Repository**: Connect your Git repository where the monorepo is stored.
+- **Service Settings**:
+  - **Name**: Give your service a unique name (e.g., `amberops-auth` or `amberops-backend`).
+  - **Runtime**: Select `Node`.
+  - **Root Directory**: Set this to the specific app's directory (e.g., `apps/auth` or `apps/backend`).
+  - **Build Command**: `pnpm install; pnpm build`
+  - **Start Command**: `pnpm start`
 
-The provided `netlify.toml` at the project root can also be used as a template.
+### Step 3: Add Environment Variables
 
-### Step 3: Set Environment Variables
+Navigate to the **Environment** tab for each of your newly created services.
 
-In your Netlify site settings, add all the required environment variables.
+- Add all the required environment variables from the list in Section 2.
+- **Important**: The `CORS_ORIGINS` variable on your backend services must include the live URLs of your Vercel frontend deployments.
+- The `NEXT_PUBLIC_AUTH_API_URL` variable on your frontend apps must point to your live Render URL for the `auth` service (e.g., `https://amberops-auth.onrender.com/api`).
 
 ---
 
