@@ -1,0 +1,15 @@
+{
+  "dashboard": "Dashboard",
+  "clusters": "Clusters",
+  "services": "Services",
+  "hosts": "Hosts",
+  "alerts": "Alerts",
+  "current_alerts": "Current Alerts",
+  "alert_definitions": "Alert Definitions",
+  "configuration": "Configuration",
+  "tasks_ops": "Tasks / Ops",
+  "logs": "Logs",
+  "settings": "Settings",
+  "help": "Help",
+  "welcome_to_amberops": "Welcome to your AmberOps Console."
+}

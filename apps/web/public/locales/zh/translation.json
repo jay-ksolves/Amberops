@@ -1,0 +1,14 @@
+{
+  "dashboard": {
+    "title": "仪表板",
+    "welcome": "欢迎来到您的 AmberOps 控制台。"
+  },
+  "clusters": {
+    "title": "集群",
+    "description": "管理您的集群并查看其健康状况。"
+  },
+  "services": {
+    "title": "服务",
+    "description": "跨集群运行的所有服务的列表。"
+  }
+}

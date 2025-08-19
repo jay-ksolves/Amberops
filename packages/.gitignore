@@ -1,0 +1,6 @@
+# Ignore node_modules in all sub-packages
+node_modules
+dist
+build
+.turbo
+*.tsbuildinfo

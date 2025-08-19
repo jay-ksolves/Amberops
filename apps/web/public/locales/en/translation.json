@@ -1,0 +1,17 @@
+{
+  "dashboard": "Dashboard",
+  "clusters": "Clusters",
+  "services": "Services",
+  "hosts": "Hosts",
+  "alerts": "Alerts",
+  "currentAlerts": "Current Alerts",
+  "definitions": "Definitions",
+  "configuration": "Configuration",
+  "tasksOps": "Tasks / Ops",
+  "logs": "Logs",
+  "settings": "Settings",
+  "help": "Help",
+  "myAccount": "My Account",
+  "support": "Support",
+  "logout": "Logout"
+}

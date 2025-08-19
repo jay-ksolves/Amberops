@@ -1,0 +1,17 @@
+{
+  "dashboard": "Tablero",
+  "clusters": "Clústeres",
+  "services": "Servicios",
+  "hosts": "Anfitriones",
+  "alerts": "Alertas",
+  "currentAlerts": "Alertas Actuales",
+  "definitions": "Definiciones",
+  "configuration": "Configuración",
+  "tasksOps": "Tareas / Ops",
+  "logs": "Registros",
+  "settings": "Ajustes",
+  "help": "Ayuda",
+  "myAccount": "Mi Cuenta",
+  "support": "Soporte",
+  "logout": "Cerrar Sesión"
+}

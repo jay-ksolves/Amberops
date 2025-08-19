@@ -1,0 +1,22 @@
+# dependencies
+/node_modules
+/.pnpm
+.pnpm-debug.log
+
+# build cache
+.next/
+/out/
+
+# misc
+.DS_Store
+*.pem
+
+# environment variables
+.env
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo

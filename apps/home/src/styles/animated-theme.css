@@ -1,0 +1,26 @@
+
+.bg-mask {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.animate-background-spread {
+    animation: BackgroundSpread 500ms forwards;
+}
+
+@keyframes BackgroundSpread {
+    0% {
+        width: 0;
+        height: 0;
+    }
+    100% {
+        width: max(200vw, 200vh);
+        height: max(200vw, 200vh);
+    }
+}

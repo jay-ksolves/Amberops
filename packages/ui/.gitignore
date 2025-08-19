@@ -1,0 +1,5 @@
+# Ignore UI-specific build artifacts
+dist
+.turbo
+node_modules
+*.tsbuildinfo

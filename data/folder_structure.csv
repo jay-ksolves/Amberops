@@ -1,0 +1,23 @@
+path,type,description
+.github,directory,GitHub Actions workflows and templates
+apps,directory,Contains all deployable applications and services.
+apps/admin,directory,Admin dashboard frontend application (Next.js)
+apps/auth,directory,Standalone Node.js/Express authentication service
+apps/backend,directory,Standalone Node.js/Express backend API service
+apps/home,directory,Public-facing landing page and auth frontend (Next.js)
+apps/web,directory,The core, protected user dashboard application (Next.js)
+docs,directory,Project documentation, including ADRs and developer guides
+packages,directory,Shared libraries (monorepo packages).
+packages/api,directory,Centralized API client and Genkit AI flows
+packages/design-tokens,directory,Shared theme, global styles, and Tailwind config
+packages/lib,directory,Shared TypeScript types and core utility functions
+packages/ui,directory,Reusable React UI components and Storybook
+scripts,directory,Contains scripts for the repository, like database seeding.
+tests,directory,End-to-end tests for all applications (Playwright)
+.env,file,Environment variables (not committed to source control)
+package.json,file,Root package manifest managing pnpm workspaces
+pnpm-workspace.yaml,file,Defines the pnpm workspace packages
+README.md,file,The main project README file.
+clean-workspace.sh,file,Shell script to clean the entire workspace.
+build-workspace.sh,file,Shell script to build the entire workspace.
+run.sh,file,Shell script to run all development servers.

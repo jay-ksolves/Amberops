@@ -1,0 +1,108 @@
+
+#cards-container {
+    --_offset-steps: 4rem;
+    --_scale-steps: 15;
+    --_opacity-steps: 10;
+    
+    --_offset-steps-two: calc(var(--_offset-steps) * -1);
+    --_offset-steps-three: calc(var(--_offset-steps) * -2);
+    --scale-steps-two: calc(1 - var(--_scale-steps) * 0.01);
+    --scale-steps-three: calc(1 - var(--_scale-steps) * 0.02);
+    --opacity-steps-two: calc(1 - var(--_opacity-steps) * 0.02);
+    --opacity-steps-three: calc(1 - var(--_opacity-steps) * 0.04);
+    
+    display: grid;
+    grid-template-areas: "stack";
+    width: min(calc(100% - 2rem), 30rem);
+}
+
+#cards-container article {
+    grid-area: stack;
+    transition: 500ms ease-in-out;
+    translate: var(--_offset) 0;
+    order: var(--_order);
+    z-index: var(--_order);
+    scale: var(--_scale);
+    opacity: var(--_opacity);
+    cursor: grab;
+    user-select: none;
+    transform-style: preserve-3d;
+}
+
+#cards-container article:active { cursor: grabbing; }
+
+#cards-container article:nth-of-type(1) {
+    --_order: var(--_1-order);
+    --_scale: var(--_1-scale);
+    --_opacity: var(--_1-opacity);
+    --_offset: var(--_1-offset);
+}
+
+#cards-container article:nth-of-type(2) {
+    --_order: var(--_2-order);
+    --_scale: var(--_2-scale);
+    --_opacity: var(--_2-opacity);
+    --_offset: var(--_2-offset);
+}
+
+#cards-container article:nth-of-type(3) {
+    --_order: var(--_3-order);
+    --_scale: var(--_3-scale);
+    --_opacity: var(--_3-opacity);
+    --_offset: var(--_3-offset);
+}
+
+#cards-container article:nth-of-type(4) {
+    --_order: var(--_4-order);
+    --_scale: var(--_4-scale);
+    --_opacity: var(--_4-opacity);
+    --_offset: var(--_4-offset);
+}
+
+#cards-container.card-1-active {
+    --_1-order: 4; --_1-scale: 1; --_1-opacity: 1; --_1-offset: 0;
+    --_2-order: 3; --_2-scale: var(--scale-steps-two); --_2-opacity: var(--opacity-steps-two); --_2-offset: var(--_offset-steps-two);
+    --_3-order: 2; --_3-scale: var(--scale-steps-three); --_3-opacity: var(--opacity-steps-three); --_3-offset: var(--_offset-steps-three);
+    --_4-order: 1; --_4-scale: calc(1 - var(--_scale-steps) * 0.03); --_4-opacity: calc(1 - var(--_opacity-steps) * 0.06); --_4-offset: calc(var(--_offset-steps) * -3);
+}
+
+#cards-container.card-2-active {
+    --_2-order: 4; --_2-scale: 1; --_2-opacity: 1; --_2-offset: 0;
+    --_3-order: 3; --_3-scale: var(--scale-steps-two); --_3-opacity: var(--opacity-steps-two); --_3-offset: var(--_offset-steps-two);
+    --_4-order: 2; --_4-scale: var(--scale-steps-three); --_4-opacity: var(--opacity-steps-three); --_4-offset: var(--_offset-steps-three);
+    --_1-order: 1; --_1-scale: calc(1 - var(--_scale-steps) * 0.03); --_1-opacity: calc(1 - var(--_opacity-steps) * 0.06); --_1-offset: calc(var(--_offset-steps) * -3);
+}
+
+#cards-container.card-3-active {
+    --_3-order: 4; --_3-scale: 1; --_3-opacity: 1; --_3-offset: 0;
+    --_4-order: 3; --_4-scale: var(--scale-steps-two); --_4-opacity: var(--opacity-steps-two); --_4-offset: var(--_offset-steps-two);
+    --_1-order: 2; --_1-scale: var(--scale-steps-three); --_1-opacity: var(--opacity-steps-three); --_1-offset: var(--_offset-steps-three);
+    --_2-order: 1; --_2-scale: calc(1 - var(--_scale-steps) * 0.03); --_2-opacity: calc(1 - var(--_opacity-steps) * 0.06); --_2-offset: calc(var(--_offset-steps) * -3);
+}
+
+#cards-container.card-4-active {
+    --_4-order: 4; --_4-scale: 1; --_4-opacity: 1; --_4-offset: 0;
+    --_1-order: 3; --_1-scale: var(--scale-steps-two); --_1-opacity: var(--opacity-steps-two); --_1-offset: var(--_offset-steps-two);
+    --_2-order: 2; --_2-scale: var(--scale-steps-three); --_2-opacity: var(--opacity-steps-three); --_2-offset: var(--_offset-steps-three);
+    --_3-order: 1; --_3-scale: calc(1 - var(--_scale-steps) * 0.03); --_3-opacity: calc(1 - var(--_opacity-steps) * 0.06); --_3-offset: calc(var(--_offset-steps) * -3);
+}
+
+.glass {
+    background: hsl(var(--card) / 0.5);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--border) / 0.2);
+    height: 24rem;
+    transform: rotateX(10deg) rotateY(-15deg);
+}
+
+.glass-button {
+     background: hsl(var(--primary) / 0.1);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--primary) / 0.2);
+}
+
+.glass-button:hover {
+     background: hsl(var(--primary) / 0.2);
+}

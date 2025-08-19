@@ -1,0 +1,69 @@
+
+.preloader-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: hsl(var(--background));
+}
+
+.preloader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 250px;
+  position: relative;
+  opacity: .9;
+}
+
+.preloader-container .side {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 250px;
+  height: 25px;
+}
+
+.preloader-container .side > div {
+  height: inherit;
+  background-color: hsl(var(--primary));
+  border-radius: 25px;
+  box-shadow: 0 0 0 7.5px hsla(var(--primary), 0.15);
+}
+
+.preloader-container .side:nth-child(1) {
+  transform: rotate(0deg);
+}
+.preloader-container .side:nth-child(2) {
+  transform: rotate(30deg);
+}
+.preloader-container .side:nth-child(3) {
+  transform: rotate(60deg);
+}
+.preloader-container .side:nth-child(4) {
+  transform: rotate(90deg);
+}
+.preloader-container .side:nth-child(5) {
+  transform: rotate(120deg);
+}
+.preloader-container .side:nth-child(6) {
+  transform: rotate(150deg);
+}
+
+.preloader-container .side-odd .left {
+  width: 40px;
+}
+
+.preloader-container .side-odd .right {
+  width: 40px;
+}
+
+.preloader-container .side-even .left {
+  width: 80px;
+}
+
+.preloader-container .side-even .right {
+  width: 80px;
+}

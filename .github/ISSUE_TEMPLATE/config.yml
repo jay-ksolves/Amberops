@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: '❓ Ask a Question'
+    url: 'https://github.com/your-org/your-repo/discussions/new?category=q-a'
+    about: 'Have a question? Please ask and answer questions here.'
+  - name: '💡 Feature Request'
+    url: 'https://github.com/your-org/your-repo/discussions/new?category=ideas'
+    about: 'Have a new idea or feature suggestion? Share it with the community!'
+  - name: '🛡️ Report a Security Vulnerability'
+    url: 'https://github.com/your-org/your-repo/security/policy'
+    about: 'Please report security vulnerabilities through our responsible disclosure program.'

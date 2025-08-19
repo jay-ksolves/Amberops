@@ -1,0 +1,7 @@
+{
+  "build": {
+    "env": {
+      "VERCEL_BUILD_COMMAND": "pnpm install --filter=${VERCEL_GIT_REPO_SLUG}... && pnpm build --filter=${VERCEL_GIT_REPO_SLUG}"
+    }
+  }
+}

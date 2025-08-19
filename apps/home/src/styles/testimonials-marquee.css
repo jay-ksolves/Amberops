@@ -1,0 +1,82 @@
+
+.testimonials-marquee-container {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 3rem;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.testimonials-marquee {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: space-around;
+    gap: 1.5rem;
+    padding-right: 1.5rem; /* Ensures space at the end of the loop */
+    min-width: 100%;
+    animation: scroll 40s linear infinite;
+}
+
+.testimonials-marquee-container:hover .testimonials-marquee {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.testimonial-card {
+    width: 380px;
+    max-width: 90vw;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid hsl(var(--border) / 0.5);
+    background: radial-gradient(circle at top left, hsl(var(--primary)/0.05), transparent 40%),
+                radial-gradient(circle at bottom right, hsl(var(--accent)/0.05), transparent 50%);
+    box-shadow: 0 8px 32px 0 hsl(var(--primary) / 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden; /* Important for containing the smoke effect */
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px 0 hsl(var(--primary) / 0.15);
+}
+
+.smoke-effect {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, hsla(var(--primary), 0.2) 0%, transparent 40%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    filter: blur(30px);
+    transition: opacity 0.5s ease-in-out;
+    animation: rotate-smoke 15s linear infinite;
+    z-index: 0;
+}
+
+.testimonial-card:hover .smoke-effect {
+    opacity: 1;
+}
+
+@keyframes rotate-smoke {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}

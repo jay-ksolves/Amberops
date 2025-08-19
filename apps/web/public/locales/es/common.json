@@ -1,0 +1,15 @@
+{
+  "dashboard": "Tablero",
+  "clusters": "Clústeres",
+  "services": "Servicios",
+  "hosts": "Anfitriones",
+  "alerts": "Alertas",
+  "current_alerts": "Alertas Actuales",
+  "alert_definitions": "Definiciones de Alertas",
+  "configuration": "Configuración",
+  "tasks_ops": "Tareas / Ops",
+  "logs": "Registros",
+  "settings": "Ajustes",
+  "help": "Ayuda",
+  "welcome_to_amberops": "Bienvenido a su Consola AmberOps."
+}

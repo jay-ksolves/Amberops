@@ -1,0 +1,39 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+node_modules
+.pnpm-store
+
+# next.js
+.next/
+out/
+
+# build output
+dist
+build
+.vercel
+
+# storybook
+/packages/ui/storybook-static/
+
+# misc
+.DS_Store
+*.pem
+*.log
+.env
+.env*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# testing
+coverage
+test-results
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+playwright-report

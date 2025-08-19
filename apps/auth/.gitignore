@@ -1,0 +1,19 @@
+# dependencies
+/node_modules
+/.pnpm
+.pnpm-debug.log
+
+# build output
+dist/
+/build/
+
+# misc
+.DS_Store
+*.pem
+
+# environment variables
+.env
+.env*.local
+
+# typescript
+*.tsbuildinfo

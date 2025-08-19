@@ -1,0 +1,32 @@
+# Default build settings for all Netlify sites in this monorepo.
+# You can override these settings in the Netlify UI for each specific site.
+
+[build]
+  # The command to build the specific application.
+  # This command assumes you'll set the package name in your site's build settings.
+  # Example for the 'web' app: `pnpm build --filter web`
+  command = "pnpm build"
+
+  # The directory where the built files are located.
+  # This will need to be set specifically for each site in the Netlify UI.
+  # Example for the 'web' app: "apps/web/.next"
+  publish = "dist" # A sensible default, but must be overridden.
+
+[build.environment]
+  # Specify the Node.js version to use.
+  NODE_VERSION = "20"
+  # Specify the pnpm version to use.
+  PNPM_VERSION = "9.1.0"
+
+# --- Example Site Configuration for the 'web' app ---
+# You would configure this in the Netlify UI or in separate toml files.
+#
+# [[context.production]]
+#   command = "pnpm build --filter web"
+#   publish = "apps/web/.next"
+
+# --- Example Site Configuration for the 'home' app ---
+#
+# [[context.production]]
+#   command = "pnpm build --filter home"
+#   publish = "apps/home/.next"
