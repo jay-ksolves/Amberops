@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "description": "Standalone authentication service for AmberOps",
-  "main": "dist/index.js",
+  "main": "dist/src/index.js",
   "scripts": {
     "dev": "tsx watch src/index.ts",
-       "build": "rm -rf dist && tsc",
+    "build": "rm -rf dist && tsc",
     "start": "node dist/src/index.js",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "typecheck": "tsc --noEmit"
