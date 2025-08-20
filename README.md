@@ -2,6 +2,18 @@
 
 This repository contains the source code for the AmberOps Console, a modern management console for Apache Ambari-like operations, built with a scalable and maintainable monorepo architecture.
 
+
+
+# -- Application URLs --
+NEXT_PUBLIC_HOME_URL=https://amberops.vercel.app/
+NEXT_PUBLIC_WEB_URL=https://amberops-console.vercel.app/
+NEXT_PUBLIC_ADMIN_URL=https://amberops-admin.vercel.app/
+
+# -- API URLs --
+NEXT_PUBLIC_AUTH_API_URL=https://amberops-auth.onrender.com/api
+NEXT_PUBLIC_API_BASE_URL=https://amberops-backend.onrender.com/api/v1
+
+
 ## 1. Core Philosophy
 
 - **Separation of Concerns**: Each part of the project has a distinct and well-defined responsibility.
