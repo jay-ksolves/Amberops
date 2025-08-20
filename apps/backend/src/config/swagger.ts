@@ -14,6 +14,10 @@ const options = {
         url: 'http://localhost:3004/api/v1',
         description: 'Development server'
       },
+       {
+        url: 'https://amberops-backend.onrender.com/api/v1',
+        description: 'Production server'
+      },
     ],
     components: {
       securitySchemes: {
