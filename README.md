@@ -4,7 +4,7 @@ This repository contains the source code for the AmberOps Console, a modern mana
 
 
 
-## -- Application URLs --
+### -- Application URLs --
 
 NEXT_PUBLIC_HOME_URL=https://amberops.vercel.app/
 
@@ -12,7 +12,7 @@ NEXT_PUBLIC_WEB_URL=https://amberops-console.vercel.app/
 
 NEXT_PUBLIC_ADMIN_URL=https://amberops-admin.vercel.app/
 
-## -- API URLs --
+### -- API URLs --
 
 NEXT_PUBLIC_AUTH_API_URL=https://amberops-auth.onrender.com/api
 
