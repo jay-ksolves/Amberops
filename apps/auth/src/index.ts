@@ -8,10 +8,14 @@ import authRoutes from './routes/auth';
 import { log } from '@amberops/lib';
 
 const app = express();
-const PORT = process.env.AUTH_PORT || 3002;
+// Use the AUTH_PORT from environment variables, falling back to 3002 for local dev.
+const PORT = parseInt(process.env.AUTH_PORT || '3002', 10);
 
 // Dynamically configure CORS
-const allowedOrigins = (process.env.CORS_ORIGINS || '').split(',');
+const allowedOrigins = (process.env.CORS_ORIGINS || '')
+  .split(',')
+  .map(origin => origin.trim().replace(/\/$/, '')); // Trim whitespace and remove trailing slashes
+
 const corsOptions = {
   origin: (origin: string | undefined, callback: (err: Error | null, allow?: boolean) => void) => {
     // allow requests with no origin (like mobile apps or curl requests)

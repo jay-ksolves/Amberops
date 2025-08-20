@@ -32,10 +32,14 @@ mongoose.set('toObject', {
 
 
 const app = express();
-const PORT = process.env.BACKEND_PORT || 3004;
+// Use the BACKEND_PORT from environment variables, falling back to 3004 for local dev.
+const PORT = parseInt(process.env.BACKEND_PORT || '3004', 10);
 
 // Dynamically configure CORS
-const allowedOrigins = (process.env.CORS_ORIGINS || '').split(',');
+const allowedOrigins = (process.env.CORS_ORIGINS || '')
+  .split(',')
+  .map(origin => origin.trim().replace(/\/$/, '')); // Trim whitespace and remove trailing slashes
+
 const corsOptions = {
   origin: (origin: string | undefined, callback: (err: Error | null, allow?: boolean) => void) => {
     // allow requests with no origin (like mobile apps or curl requests)
